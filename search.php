@@ -40,7 +40,9 @@ $tweets = rest_helper(
 	'Authorization: Bearer ' . $access_token
 );
 if (!empty($tweets)) {
-	foreach ($tweets as $tweet) {
+	foreach ($tweets->statuses as $tweet) {
+		// print_r($tweet);die();
+		// // $text = $tweet[0];
 		echo $tweet->text . "\n";
 	}
 }
